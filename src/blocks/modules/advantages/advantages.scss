@@ -1,0 +1,66 @@
+.advantages {
+    margin-bottom: 43px;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        @include col();
+        @include size(12);
+        @include size-sm(6);
+        @include size-lg(4);
+        @media (min-width: $break_sm) {
+            margin-bottom: 20px;
+        }
+        display: flex;
+        align-items: center;
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    &__icon {
+        width: 100%;
+        max-width: 55px;
+        &_car-up {
+            width: 49px;
+            height: 24px;
+        }
+        &_car-down {
+            width: 44px;
+            height: 37px;
+        }
+        &_towed-car {
+            width: 46px;
+            height: 23px;
+        }
+        &_evac-car {
+            width: 50px;
+            height: 21px;
+        }
+        &_wheel {
+            width: 30px;
+            height: 30px;
+        }
+        &_car {
+            width: 50px;
+            height: 19px;
+        }
+    }
+    &__icon-wrp {
+        @media (min-width: $break_lg) {
+            margin-right: 15px;
+        }
+        display: flex;
+        flex: 0 0 50px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+    &__text {
+        @media (min-width: $break_md) {
+            font-size: 16px;
+        }
+        font-size: 13px;
+        color: $white;
+    }
+}

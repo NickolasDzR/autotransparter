@@ -1,0 +1,107 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/modules/advantages/advantages
+include ../blocks/modules/info/info
+include ../blocks/modules/examples/examples
+
+block variables
+	-
+		let title = "Эвакуатор Караганды 24/7"
+		let advantagesText = ["5 мест в авто для ваших пассажиров", "Погрузка любой сложности, вытащим с кювета", "Загрузка/выгрузка с фуры",
+								"Эвакуация после ДТП", "Эвакуация при поломке шаровых заклинивших колёс", "Грузоперевозки 6 метров"]
+		let advantagesIcon = ["car-up", "car-down", "towed-car", "evac-car", "wheel", "car"]
+		let advantagesVw = ["0 0 53 26", "0 0 44 37", "0 0 54 27", "0 0 55 23", "0 0 37 37", "0 0 54 20"]
+
+block content
+	include ../../node_modules/bemto.pug/bemto.pug
+	+b.site-container
+		+b.HEADER
+			+b.container
+				+b.logo
+					+e.A.link(href="/" target="_blank" aria-label="Ссылка на главную страницу")
+						+icon({
+							name: "logo",
+							alt: "Логотип сайта - эвакуатор Караганды",
+							class: "logo__img",
+							viewbox: "0 0 225 62",
+						})
+					+e.about-wrp
+						+e.P.about Эвакуация автомобилей круглосуточно в Караганде 24/7
+					+e.A.number(href="tel:+77780992900" target="_blank" title="Номер телефона экскаватора") +7 (778) 099 29 00
+					+b.UL.soc-ref
+						+e.LI.item
+							+e.A.link(href="https://wa.me/77780992900" target="_blank" title="Ссылка на соцсеть whatsapp")
+								+icon({
+									name: "whatsup",
+									viewbox: "0 0 40 40",
+									class: "soc-ref__icon",
+									alt: "картинка соцсети whatsapp"
+								})
+						+e.LI.item
+							+e.A.link(href="https://www.instagram.com/krg09evakuator/" target="_blank" title="Ссылка на соцсеть instagram")
+								+icon({
+									name: "insta",
+									viewbox: "0 0 40 40",
+									class: "soc-ref__icon",
+									alt: "Ссылка на соцсеть instgram"
+								})
+		+b.MAIN
+			+b.title
+				.container
+					.row.no-wrap_sm.aling-items-end_sm
+						+e.left
+							+e.H1.head Услуги эвакуатора круглосуточно в Караганде
+							+e.text-wrp
+								+e.P.text Выезжаем в любое направление, в любое время дня и ночи
+								img(class="title__img_small" src="img/content/excavator-mob@2x.png")
+							+e.control-wrp
+								+b.A.btn(href="tel:+77780992900" target="_blank") Позвонить
+								+e.A.link(href="https://wa.me/77780992900" title="Ссылка на соцсеть whatsapp")
+									+icon({
+										name: "whatsup",
+										viewbox: "0 0 40 40",
+										class: "soc-ref__icon soc-ref__icon_full",
+										alt: "картинка соцсети whatsapp"
+									})
+						+e.right
+							picture
+								source(srcset="img/webp/excavator@1x.webp 1x, img/webp/excavator@2x.webp 2x" type="image/webp")
+								img(class="title__img title__img_sm" srcset="img/content/excavator@2x.png 2x" src="img/content/excavator@1x.png" alt="Газель-эвакуатор")
+
+			+adv({
+				text: advantagesText,
+				icon: advantagesIcon,
+				class: "advantages__icon",
+				viewbox: advantagesVw,
+			})
+			+info()
+			+examples()
+		+b.FOOTER.footer
+			.container
+				.row.justify-space-between-md.align-center
+					+e.left
+						+e.P.info._left Вызов эвакуатора круглосуточно в Караганде 24/7
+					+e.center
+						+e.A.number(href="tel:+77780992900" target="_blank" title="Номер телефона экскаватора") +7 (778) 099 29 00
+						+e.UL.soc-ref
+							+e.LI.soc-item
+								+e.A.link(href="https://wa.me/77780992900" target="_blank" title="Ссылка на соцсеть whatsup")
+									+icon({
+										name: "whatsup",
+										viewbox: "0 0 40 40",
+										class: "soc-ref__icon",
+										alt: "картинка соцсети whatsup"
+									})
+							+e.LI.soc-item
+								+e.A.link(href="https://www.instagram.com/krg09evakuator/" target="_blank" title="Ссылка на соцсеть instagram")
+									+icon({
+										name: "insta",
+										viewbox: "0 0 40 40",
+										class: "soc-ref__icon",
+										alt: "Ссылка на соцсеть instgram"
+									})
+					+e.right
+						+e.P.info Разработка сайта <br><a class="footer__info-link" href="https://webpreppers.kz">Webpeppers.kz</a>
+
+block scripts
+	include layouts/scripts.pug

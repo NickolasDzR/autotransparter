@@ -1,0 +1,106 @@
+{
+    "name": "autotransparter",
+    "repository": {
+        "type": "git",
+        "url": "git+https://NickolasDzR@bitbucket.org/tiglaru/prizyvnik-plius.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "dev": "gulp --development",
+        "build": "gulp prod --production",
+        "build:views": "gulp views --production",
+        "build:styles": "gulp styles --production",
+        "build:scripts": "gulp scripts --production",
+        "build:images": "gulp images --production",
+        "build:webp": "gulp webp --production",
+        "build:sprites": "gulp sprites --production",
+        "build:fonts": "gulp fonts --production",
+        "build:favicons": "gulp favicons --production",
+        "build:gzip": "gulp gzip --production",
+        "lint:styles": "stylelint \"src/**/*.scss\" --syntax=scss",
+        "lint:styles --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
+        "lint:scripts": "eslint --color ./src/blocks",
+        "lint:scripts --fix": "eslint --fix --color ./src/blocks",
+        "bem-c": "bem create $* -l src/blocks/components",
+        "bem-m": "bem create $* -l src/blocks/modules"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/register": "^7.4.0",
+        "babel-eslint": "~10.1.0",
+        "babel-loader": "^8.0.5",
+        "bem-tools-core": "github:bem-tools/bem-tools-core",
+        "bem-tools-create": "github:bem-tools/bem-tools-create",
+        "browser-sync": "^2.26.13",
+        "del": "^5.1.0",
+        "element-closest": "^3.0.2",
+        "eslint": "~7.7.0",
+        "gulp": "^4.0.0",
+        "gulp-autoprefixer": "~7.0.1",
+        "gulp-clean-css": "~4.3.0",
+        "gulp-cwebp": "^4.0.2",
+        "gulp-debug": "~4.0.0",
+        "gulp-group-css-media-queries": "^1.2.2",
+        "gulp-if": "^3.0.0",
+        "gulp-imagemin": "~7.1.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-plumber": "^1.2.0",
+        "gulp-pug": "^4.0.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "~4.1.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-svg-sprite": "^1.5.0",
+        "gulp-watch": "^5.0.0",
+        "gulp-webp": "^4.0.1",
+        "husky": "^4.3.5",
+        "imagemin-giflossy": "^5.1.10",
+        "imagemin-jpeg-recompress": "~7.0.0",
+        "imagemin-mozjpeg": "^9.0.0",
+        "imagemin-pngquant": "~9.0.0",
+        "imagemin-webp": "^6.0.0",
+        "imagemin-zopfli": "^7.0.0",
+        "lint-staged": "^10.0.3",
+        "polyfill-array-includes": "^2.0.0",
+        "regenerator-runtime": "^0.13.7",
+        "remove-files-webpack-plugin": "^1.4.4",
+        "require-dir": "^1.2.0",
+        "smoothscroll-polyfill": "^0.4.4",
+        "stylelint": "^13.6.1",
+        "stylelint-order": "^4.1.0",
+        "stylelint-selector-bem-pattern": "^2.1.0",
+        "swipe": "^1.7.7",
+        "swiper": "^6.4.15",
+        "webpack": "~4.44.1",
+        "webpack-remove-block-loader": "^1.0.2",
+        "webpack-stream": "^5.2.1",
+        "yargs": "~15.4.1"
+    },
+    "dependencies": {
+        "bemto.pug": "^2.1.0",
+        "copy-webpack-plugin": "^6.4.0",
+        "es6-object-assign": "^1.1.0",
+        "es6-promise-promise": "^1.0.0",
+        "gulp-responsive": "^3.0.1",
+        "inputmask": "^5.0.5",
+        "jquery": "^3.5.1",
+        "jquery-validation": "^1.19.2",
+        "smart-grid": "^2.1.2",
+        "svgxuse": "^1.2.6",
+        "whatwg-fetch": "^3.5.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "!(_*).scss": [
+            "stylelint --fix --color --config ./.stylelintrc"
+        ],
+        "*.js": [
+            "eslint --fix --color"
+        ]
+    }
+}

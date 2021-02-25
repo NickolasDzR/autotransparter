@@ -1,0 +1,34 @@
+mixin info(value = false)
+    +b.info
+        .container
+            .row
+                +e.left
+                    +e.content
+                        +icon({
+                            name: "face",
+                            class: "info__icon info__icon_face",
+                            viewbox: "0 0 34 45",
+                        })
+                        +e.P.text У нас только опытные водители с большим стажем, категории  B и C. Мы с радостью поможем вам и вашему автомобилю.
+                    +picture({
+                        name: "specialist",
+                        format: "png",
+                        sm: true,
+                        alt: "Шофер сидит в машине",
+                        class: "img_left"
+                    })
+                +e.right
+                    +e.content
+                        +icon({
+                            name: "like",
+                            class: "info__icon info__icon_like",
+                            viewbox: "0 0 34 33",
+                        })
+                        +e.P.text Работаем на газеле 2010 года выпуска, авто в отличном состоянии, всё исправно, все ТО проходим вовремя, отвечаем за свой автомобиль.
+                    +picture({
+                        name: "excavator-bg",
+                        format: "png",
+                        sm: true,
+                        alt: "Экскаватор на фоне",
+                        class: "img_right"
+                    })

@@ -1,0 +1,14 @@
+mixin adv(value = false)
+    +b.advantages
+        .container
+            .row
+                +e.UL.list
+                    - for (let [index, text] of value.text.entries())
+                        +e.LI.item
+                            +e.icon-wrp
+                                +icon({
+                                    name: value.icon[index],
+                                    viewbox: value.viewbox[index],
+                                    class: `advantages__icon advantages__icon_${value.icon[index]}`,
+                                })
+                            +e.P.text #{text}

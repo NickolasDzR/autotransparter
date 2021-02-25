@@ -1,0 +1,97 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/modules/advantages/advantages
+include ../../blocks/modules/info/info
+include ../../blocks/modules/examples/examples
+
+block variables
+    -
+        let title = "Эвакуатор Караганды 24/7"
+        let advantagesText = ["5-ти местная погрузка любой сложности", "Вытащим с кювета", "Загрузка/выгрузка с фуры",
+            "Эвакуация после ДТП", "Эвакуация при поломке шаровых, заклинивших колёс", "Грузоперевозка автомобилей длиной до 6 метров"]
+        let advantagesIcon = ["car-up", "car-down", "towed-car", "evac-car", "wheel", "car"]
+        let advantagesVw = ["0 0 53 26", "0 0 44 37", "0 0 54 27", "0 0 55 23", "0 0 37 37", "0 0 54 20"]
+
+block content
+    include ../../../node_modules/bemto.pug/bemto.pug
+    +b.site-container.site-container_404
+        +b.HEADER
+            +b.container
+                +b.logo
+                    +e.A.link(href="/" aria-label="Ссылка на главную страницу")
+                        +icon({
+                            name: "logo",
+                            alt: "Логотип сайта - эвакуатор Караганды",
+                            class: "logo__img",
+                            viewbox: "0 0 225 62",
+                        })
+                    +e.about-wrp
+                        +e.P.about Эвакуация автомобилей круглосуточно в Караганде 24/7
+                    +e.A.number(href="tel:+77780992900" title="Номер телефона экскаватора") +7 (778) 099 29 00
+                    +b.UL.soc-ref
+                        +e.LI.item
+                            +e.A.link(href="https://wa.me/77780992900" target="_black" title="Ссылка на соцсеть whatsapp")
+                                +icon({
+                                    name: "whatsup",
+                                    viewbox: "0 0 40 40",
+                                    class: "soc-ref__icon",
+                                    alt: "картинка соцсети whatsapp"
+                                })
+                        +e.LI.item
+                            +e.A.link(href="https://www.instagram.com/instagram/" target="_black" title="Ссылка на соцсеть instagram")
+                                +icon({
+                                    name: "insta",
+                                    viewbox: "0 0 40 40",
+                                    class: "soc-ref__icon",
+                                    alt: "Ссылка на соцсеть instgram"
+                                })
+        +b.MAIN
+            +b.title
+                .container
+                    .row.no-wrap_sm.aling-items-end_sm
+                        +e.left
+                            +e.H1.head К сожалению страница не найдена
+                            +e.text-wrp._404
+                                +e.P.text Ошибка 404
+                            +e.control-wrp
+                                +b.A.btn(href="tel:+77780992900") Позвонить
+                                +e.A.link(href="https://wa.me/77780992900" title="Ссылка на соцсеть whatsapp")
+                                    +icon({
+                                        name: "whatsup",
+                                        viewbox: "0 0 40 40",
+                                        class: "soc-ref__icon soc-ref__icon_full",
+                                        alt: "картинка соцсети whatsapp"
+                                    })
+                        +e.right
+            +adv({
+                text: advantagesText,
+                icon: advantagesIcon,
+                class: "advantages__icon",
+                viewbox: advantagesVw,
+            })
+        +b.FOOTER.footer._404
+            .container
+                .row.justify-space-between-md.align-center
+                    +e.left
+                        +e.P.info._left Вызов эвакуатора круглосуточно в Караганде 24/7
+                    +e.center
+                        +e.A.number(href="tel:+77780992900" title="Номер телефона экскаватора") +7 (778) 099 29 00
+                        +e.UL.soc-ref
+                            +e.LI.soc-item
+                                +e.A.link(href="https://wa.me/77780992900" target="_black" title="Ссылка на соцсеть whatsapp")
+                                    +icon({
+                                        name: "whatsup",
+                                        viewbox: "0 0 40 40",
+                                        class: "soc-ref__icon",
+                                        alt: "картинка соцсети whatsapp"
+                                    })
+                            +e.LI.soc-item
+                                +e.A.link(href="https://www.instagram.com/instagram/" target="_black" title="Ссылка на соцсеть instagram")
+                                    +icon({
+                                        name: "insta",
+                                        viewbox: "0 0 40 40",
+                                        class: "soc-ref__icon",
+                                        alt: "Ссылка на соцсеть instgram"
+                                    })
+                    +e.right
+                        +e.P.info Разработка сайта <a href="https://webpreppers.kz">Webpeppers.kz</a>

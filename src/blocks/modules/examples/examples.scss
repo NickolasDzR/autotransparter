@@ -1,0 +1,93 @@
+.examples {
+    padding-top: 30px;
+    padding-bottom: 69px;
+    &__item {
+        display: flex;
+        align-items: center;
+        &:not(.swiper-slide-active) {
+            img {
+                display: block;
+                position: relative;
+                filter: grayscale(100%);
+            }
+        }
+        img {
+            transform: scale(0.45);
+            transition: transform .7s ease-out;
+            &:after {
+                transform: scale(1);
+            }
+        }
+        &.swiper-slide-active {
+            img {
+                transform: scale(1);
+            }
+        }
+        &.swiper-slide-next {
+            img {
+                transform-origin: left;
+            }
+            &:after {
+                transform-origin: left;
+            }
+        }
+        &.swiper-slide-prev {
+            img {
+                transform-origin: right;
+            }
+            &:after {
+                transform-origin: right;
+            }
+        }
+    }
+    .swiper-button-prev {
+        @media (min-width: $break_lg) {
+            display: block;
+        }
+        display: none;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 20px;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .swiper-button-next {
+        @media (min-width: $break_lg) {
+            display: block;
+        }
+        display: none;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        right: -20px;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .swiper-button-prev svg,
+    .swiper-button-next svg {
+        fill: $white;
+        transition: fill .3s linear;
+    }
+    .swiper-button-prev svg:hover,
+    .swiper-button-next svg:hover {
+        fill: $red;
+    }
+}
+

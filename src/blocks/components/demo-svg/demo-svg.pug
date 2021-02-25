@@ -1,0 +1,71 @@
+mixin demo-svg()
+    include ../../../views/helpers/mixins
+    -
+        const demoSvg = [
+            {
+                name: 'arrow-left',
+                viewbox: '0 0 40 40',
+            },
+            {
+                name: 'arrow-right',
+                viewbox: '0 0 40 40',
+            },
+            {
+                name: 'car',
+                viewbox: '0 0 54 20',
+            },
+            {
+                name: 'car-down',
+                viewbox: '0 0 44 37',
+            },
+            {
+                name: 'car-up',
+                viewbox: '0 0 53 26',
+            },
+            {
+                name: 'evac-car',
+                viewbox: '0 0 55 23',
+            },
+            {
+                name: 'face',
+                viewbox: '0 0 34 45',
+            },
+            {
+                name: 'insta',
+                viewbox: '0 0 40 40',
+            },
+            {
+                name: 'whatsup',
+                viewbox: '0 0 40 40',
+            },
+            {
+                name: 'like',
+                viewbox: '0 0 34 33',
+            },
+            {
+                name: 'logo',
+                viewbox: '0 0 225 62',
+            },
+            {
+                name: 'towed-car',
+                viewbox: '0 0 54 27',
+            },
+            {
+                name: 'wheel',
+                viewbox: '0 0 37 37',
+            },
+        ];
+    .demo-svg
+        .container
+            h1.demo-svg__title.h1-heading Demo page
+            ul.demo-svg__list
+                each val in demoSvg
+                    li.demo-svg__item
+                        +icon({
+                            viewbox: val.viewbox,
+                            class: 'demo-svg__img',
+                            name: val.name,
+                        })
+                        .demo-svg__info
+                            h4.demo-svg__name.h4-heading #{val.name}
+                            h4.demo-svg__name.h4-heading #{val.viewbox}
