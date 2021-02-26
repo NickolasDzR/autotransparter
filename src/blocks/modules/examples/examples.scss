@@ -1,93 +1,79 @@
 .examples {
     padding-top: 30px;
     padding-bottom: 69px;
+    position: relative;
+
     &__item {
         display: flex;
         align-items: center;
-        &:not(.swiper-slide-active) {
-            img {
-                display: block;
-                position: relative;
-                filter: grayscale(100%);
-            }
-        }
-        img {
-            transform: scale(0.45);
-            transition: transform .7s ease-out;
-            &:after {
-                transform: scale(1);
-            }
-        }
-        &.swiper-slide-active {
-            img {
-                transform: scale(1);
-            }
-        }
-        &.swiper-slide-next {
-            img {
-                transform-origin: left;
-            }
-            &:after {
-                transform-origin: left;
-            }
-        }
-        &.swiper-slide-prev {
-            img {
-                transform-origin: right;
-            }
-            &:after {
-                transform-origin: right;
-            }
-        }
-    }
-    .swiper-button-prev {
-        @media (min-width: $break_lg) {
-            display: block;
-        }
-        display: none;
-        position: absolute;
-        top: 50%;
-        bottom: 50%;
-        left: 20px;
-        z-index: 100;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transform: translate(-50%, -50%);
-        pointer-events: auto;
-        svg {
-            width: 40px;
-            height: 40px;
-        }
-    }
-    .swiper-button-next {
-        @media (min-width: $break_lg) {
-            display: block;
-        }
-        display: none;
-        position: absolute;
-        top: 50%;
-        bottom: 50%;
-        right: -20px;
-        z-index: 100;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transform: translate(-50%, -50%);
-        pointer-events: auto;
-        svg {
-            width: 40px;
-            height: 40px;
-        }
-    }
-    .swiper-button-prev svg,
-    .swiper-button-next svg {
-        fill: $white;
-        transition: fill .3s linear;
-    }
-    .swiper-button-prev svg:hover,
-    .swiper-button-next svg:hover {
-        fill: $red;
     }
 }
 
+.glide {
+    &__track {
+        position: relative;
+    }
+    &__slide:not(.glide__slide--active) {
+        filter: grayscale(100%);
+        transform: scale(0.43);
+        transform-origin: right;
+    }
+    &__slide--active + .glide__slide {
+        transform-origin: left;
+    }
+    &__slide--active {
+        transform: scale(1);
+        transition: transform .3s linear;
+    }
+    &__slide:not(.glide__slide--active):before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black, 0.6);
+    }
+    &__arrow {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        @media (min-width: $break_md) {
+            display: block;
+        }
+    }
+    &__arrow--prev, .glide__arrow--next {
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        width: 40px;
+        height: 40px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+    &__arrow--prev {
+        left: 35px;
+    }
+    &__arrow--next {
+        right: -6px;
+        left: auto;
+    }
+    &__arrow svg {
+        width: 40px;
+        max-width: 100%;
+        height: 40px;
+        fill: $white;
+    }
+}

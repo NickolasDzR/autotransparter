@@ -1,39 +1,16 @@
-import Swiper from "swiper/swiper-bundle";
+import Glide from "@glidejs/glide";
 
-const swiperSlider = document.querySelector(".swiper-container");
-
-const exampleSlider = new Swiper(swiperSlider, {
-    slidesPerView: 1.3,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 10,
-    speed: 700,
-    lazy: {
-        loadPrevNext: true,
-        loadPrevNextAmount: 3,
-    },
-    observer: true,
-    observeParents: true,
-    navigation: {
-        nextEl: "<svg><use xlink:href='img/sprites/sprite.svg#arrow-right'></use></svg>",
-        prevEl: "<svg><use xlink:href='img/sprites/sprite.svg#arrow-right'></use></svg>",
-        hiddenClass: "swiper-button-hidden",
-    },
+new Glide(".glide", {
+    type: "carousel",
+    rewind: true,
+    startAt: 3,
+    perView: 2.2,
+    focusAt: "center",
+    animationDuration: 150,
+    rewindDuration: 0,
     breakpoints: {
-        992: {
-            slidesPerView: 2.1,
-            allowTouchMove: false,
+        768: {
+            perView: 1.4
         }
     }
-});
-
-const swiperNext = document.querySelector(".swiper-button-next");
-const swiperPrev = document.querySelector(".swiper-button-prev");
-
-swiperNext.addEventListener("click", function() {
-    exampleSlider.slideNext();
-});
-
-swiperPrev.addEventListener("click", function() {
-    exampleSlider.slidePrev();
-});
+}).mount();

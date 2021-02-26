@@ -2,71 +2,65 @@ mixin examples()
     +b.examples
         .container
             .row
-                .swiper-container
-                    +e.div.list.swiper-wrapper
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed@2x.jpg 2x`
-                                data-src=`img/content/crashed@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-1@2x.jpg 2x`
-                                data-src=`img/content/crashed-1@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-2@2x.jpg 2x`
-                                data-src=`img/content/crashed-2@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-3@2x.jpg 2x`
-                                data-src=`img/content/crashed-3@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-4@2x.jpg 2x`
-                                data-src=`img/content/crashed-4@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-5@2x.jpg 2x`
-                                data-src=`img/content/crashed-5@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-6@2x.jpg 2x`
-                                data-src=`img/content/crashed-6@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                        +e.item.item.swiper-slide
-                            +e.IMG(class="img swiper-lazy"
-                                data-srcset=`img/content/crashed-7@2x.jpg 2x`
-                                data-src=`img/content/crashed-7@1x.jpg`
-                                alt="Пример погрузки разбитой машины"
-                            )
-                            .swiper-lazy-preloader
-                    +b.swiper-button-prev
-                        +icon({
-                            name: "arrow-left",
-                            viewport: "0 0 40 40"
-                        })
-                    +b.swiper-button-next
-                        +icon({
-                            name: "arrow-right",
-                            viewport: "0 0 40 40"
-                        })
+                .glide
+                    .glide__track(data-glide-el="track")
+                        +e.list.glide__slides
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed@2x.jpg 2x`
+                                    src=`img/content/crashed@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-1@2x.jpg 2x`
+                                    src=`img/content/crashed-1@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-2@2x.jpg 2x`
+                                    src=`img/content/crashed-2@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-3@2x.jpg 2x`
+                                    src=`img/content/crashed-3@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-4@2x.jpg 2x`
+                                    src=`img/content/crashed-4@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-5@2x.jpg 2x`
+                                    src=`img/content/crashed-5@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-6@2x.jpg 2x`
+                                    src=`img/content/crashed-6@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                            +e.item.item.glide__slide
+                                +e.IMG(class="img"
+                                    srcset=`img/content/crashed-7@2x.jpg 2x`
+                                    src=`img/content/crashed-7@1x.jpg`
+                                    alt="Пример погрузки разбитой машины"
+                                )
+                        .glide__arrow(data-glide-el="controls")
+                            +b.BUTTON.glide__arrow.glide__arrow--prev(data-glide-dir="<")
+                                +icon({
+                                    name: "arrow-left",
+                                    viewbox: "0 0 512 512"
+                                })
+                            +b.BUTTON.glide__arrow.glide__arrow--next(data-glide-dir=">")
+                                +icon({
+                                    name: "arrow-right",
+                                    viewbox: "0 0 512 512"
+                                })

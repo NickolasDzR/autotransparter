@@ -1,5 +1,6 @@
 .info {
     position: relative;
+
     &__icon {
         margin-bottom: 18px;
 
@@ -15,10 +16,6 @@
     }
 
     &__text {
-        @media (min-width: $break_md) {
-            font-size: 16px;
-            line-height: 24px;
-        }
         font-size: 13px;
         font-weight: 600;
         line-height: 20px;
@@ -26,45 +23,49 @@
         position: relative;
         z-index: 1;
         max-width: 435px;
+        @media (min-width: $break_md) {
+            font-size: 16px;
+            line-height: 24px;
+        }
     }
 
     &__left {
-        @media (min-width: $break_sm) {
-            @include col();
-            position: static;
-        }
         @include size-sm(6);
         display: flex;
         align-items: center;
         position: relative;
+        width: 100%;
         height: 220px;
         overflow: hidden;
-        width: 100%;
+        @media (min-width: $break_sm) {
+            @include col();
+            position: static;
+        }
     }
 
     &__right {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
         @media (min-width: $break_sm) {
             @include col();
             @include size(6);
             position: static;
         }
-        display: flex;
-        align-items: center;
-        position: relative;
-        height: 220px;
-        overflow: hidden;
-        width: 100%;
     }
 
     &__img {
-        @media (min-width: $break_sm) {
-            max-width: 50%;
-        }
         position: relative;
         z-index: 1;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        @media (min-width: $break_sm) {
+            max-width: 50%;
+        }
 
         &_left {
             position: absolute;
@@ -82,8 +83,8 @@
     }
 
     &__content {
+        @include col();
         position: relative;
         z-index: 2;
-        @include col();
     }
 }
