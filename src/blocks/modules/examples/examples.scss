@@ -10,22 +10,25 @@
 }
 
 .glide {
+
     &__track {
         position: relative;
     }
-    &__slide:not(.glide__slide--active) {
+    &__slide {
+        transition: transform .4s linear;
+    }
+    &__slide:not(.is-active) {
         filter: grayscale(100%);
         transform: scale(0.43);
         transform-origin: right;
     }
-    &__slide--active + .glide__slide {
+    &__slide.is-active + .glide__slide {
         transform-origin: left;
     }
-    &__slide--active {
+    &__slide.is-active {
         transform: scale(1);
-        transition: transform .3s linear;
     }
-    &__slide:not(.glide__slide--active):before {
+    &__slide:not(.is-active):before {
         content: "";
         display: inline-block;
         position: absolute;
